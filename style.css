@@ -112,3 +112,25 @@ body h1 {
     font-weight: bold;
     cursor: pointer;
 }
+
+#category{
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 15px;
+    border: 4px solid #1a4a7a;
+    background-color: #2a6496;
+    color: white;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+.body h2 {
+    text-align: center;
+    color: #7dd4fc;
+    font-size: 35px;
+    font-family: 'Montserrat', 'Gill Sans', Calibri, sans-serif;
+    letter-spacing: 2px;
+}

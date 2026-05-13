@@ -4,6 +4,8 @@ const options = document.querySelectorAll(".op");
 let questions = [], current = 0, score = 0;
 const startbtn = document.getElementById("start");
 const restartbtn = document.getElementById("restart");
+let message = "";
+const category= document.getElementById("category");
 
 qdisplay.style.display = "none";
 nextbut.style.display = "none"; 
@@ -14,11 +16,13 @@ startbtn.addEventListener("click", () => {
   qdisplay.style.display = "block";
     adisplay.style.display = "block";
 question.style.display = "block";
+category.style.display = "none";
   fetchq();
 });
 
 async function fetchq() {
-  const res = await fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=multiple");
+  const selectedcategory = category.value;
+  const res = await fetch (`https://opentdb.com/api.php?amount=5&category=${selectedcategory}&difficulty=medium&type=multiple`);
   questions = (await res.json()).results;
   showq();
 }
@@ -54,8 +58,19 @@ function showscore() {
   nextbut.style.display = "none";
   question.style.display = "none";
     adisplay.style.display = "none";
-  qdisplay.innerHTML = `Quiz Finished!<br><br>Your Score: ${score} / ${questions.length} <br><br>Thank you for playing!`;
- restartbtn.style.display = "block";
+
+     if(score === 5){
+   message = "Quiz Master 🔥";
+}
+else if(score >= 3){
+   message = "Great Job 😎";
+}
+else{
+   message = "Keep Practicing 💪";
+}
+  
+    qdisplay.innerHTML = `Quiz Finished!<br><br>Your Score: ${score} / ${questions.length}<br><br>${message}`;
+    restartbtn.style.display = "block";
 }
 restartbtn.addEventListener("click", () => {
   current = 0;
