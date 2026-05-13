@@ -41,6 +41,13 @@ function showq() {
   timerdisplay.innerHTML = `Time Left: ${timeleft}`;
   const q = questions[current];
   timer = setInterval(() => {
+    if (timeleft <= 3) {
+  timerdisplay.style.color = "#ef8080";
+  timerdisplay.style.borderColor = "#983434";
+} else {
+  timerdisplay.style.color = "#7dd4fc";
+  timerdisplay.style.borderColor = "#2a6496";
+}
 timeleft--;
 timerdisplay.innerHTML = `Time Left: ${timeleft}`;
     if(timeleft === 0){
