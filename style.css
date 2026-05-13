@@ -1,67 +1,82 @@
 body{
-    background-color: #77aaf8;
-    font-family: Arial, sans-serif;
+    background-color: #0f1f38;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 20px;
 }
-#qdisplay {
+#qdisplay{
     max-width: 600px;
-    margin:        0 auto;
-    background-color: #fff;
+    margin: 0 auto;
+    background-color: #1a2f50;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #e0f0ff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 body h1 {
-
     text-align: center;
-    color: #040404;
-    font-size: 50px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #7dd4fc;
+    font-size: 55px;
+    font-family: 'Montserrat', 'Gill Sans', Calibri, sans-serif;
+    letter-spacing: 2px;
 }
 #adisplay {
     max-width: 600px;
     height: 400px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #1a2f50;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    
 }
 #question {
-    font-size: 24px;
-    color: #333;
+    font-size: 52px;
+    font-family: 'Montserrat', 'Courier New', monospace;
+    font-weight: bold;
+    color: #e0f0ff;
     margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 .op {
     display: block;
     width: 100%;
     padding: 20px;
-    background-color: #8bb6e3;
+    background-color: #2a6496;
     color: #fff;
-    border: 5px solid #07090b;
+    border: 5px solid #1a4a7a;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     cursor: pointer;
     margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
-
 .op:hover {
-    background-color: #131e29;
+    background-color: #1a4a7a;
 }
 #next {
     display: none;
     width: 20%;
     align-items: center;
     padding: 5px;
-    background-color: #12171c;
+    background-color: #2a6496;
     color: #fff;
-    border: 5px solid #11161c;
+    border: 5px solid #1a4a7a;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     cursor: pointer;
     margin: auto;
+    letter-spacing: 1px;
 }
 #next:hover {
-    background-color: #90c0f0;
+    background-color: #3a85c8;
 }
