@@ -97,3 +97,18 @@ body h1 {
 #next:hover {
     background-color: #3a85c8;
 }
+#restart 
+ {
+    display: block;
+    width: 250px;
+    margin: 40px auto;
+    padding: 18px;
+    background-color: #2a6496;
+    color: white;
+    border: 5px solid #1a4a7a;
+    border-radius: 20px;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}

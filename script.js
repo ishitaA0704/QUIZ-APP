@@ -3,10 +3,12 @@ const [question, nextbut, qdisplay, adisplay] =
 const options = document.querySelectorAll(".op");
 let questions = [], current = 0, score = 0;
 const startbtn = document.getElementById("start");
+const restartbtn = document.getElementById("restart");
 
 qdisplay.style.display = "none";
 nextbut.style.display = "none"; 
 adisplay.style.display = "none";
+restartbtn.style.display = "none";
 startbtn.addEventListener("click", () => {
   startbtn.style.display = "none";
   qdisplay.style.display = "block";
@@ -50,6 +52,15 @@ nextbut.addEventListener("click", () =>
 
 function showscore() {
   nextbut.style.display = "none";
-  adisplay.style.display = "none";
   question.style.display = "none";
-  qdisplay.innerHTML = `Quiz Finished!<br><br>Your Score: ${score} / ${questions.length} <br><br>Thank you for playing!`;}
+    adisplay.style.display = "none";
+  qdisplay.innerHTML = `Quiz Finished!<br><br>Your Score: ${score} / ${questions.length} <br><br>Thank you for playing!`;
+ restartbtn.style.display = "block";
+}
+restartbtn.addEventListener("click", () => {
+  current = 0;
+  score = 0;
+  restartbtn.style.display = "none";
+  adisplay.style.display = "block";
+  fetchq();
+});
