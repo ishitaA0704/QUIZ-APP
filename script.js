@@ -1,76 +1,45 @@
-const question = document.getElementById("question");
-const option = document.querySelectorAll(".op");
-const nextButton = document.getElementById("next");
-const qdisplay = document.getElementById("qdisplay");
-const adisplay = document.getElementById("adisplay");
-let questions = [];
-let currentquestion = 0;
-let score = 0;
+const [question, nextbut, qdisplay, adisplay] = 
+  ["question", "next", "qdisplay", "adisplay"].map(id => document.getElementById(id));
+const options = document.querySelectorAll(".op");
+let questions = [], current = 0, score = 0;
+
 async function fetchQuestions() {
-    const apiURL = "https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=multiple";
-    const response = await fetch(apiURL);
-    const data = await response.json();
-    questions = data.results;
-    showq();
+  const res = await fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=multiple");
+  questions = (await res.json()).results;
+  showQ();
 }
-function showq() {
-    nextButton.style.display = "none";
-    let currentQuiz = questions[currentquestion];
-    qdisplay.innerHTML = `Question ${currentquestion + 1} of ${questions.length}`;
-    question.innerHTML = currentQuiz.question;
-    let answers = [...currentQuiz.incorrectanswers];
-    answers.push(currentQuiz.correctanswer);
-    answers.sort(() => Math.random() - 0.5);
 
-    option.forEach((button, index) => {
-        button.innerHTML = answers[index];
-        button.disabled = false;
-        button.style.backgroundColor = "#8bb6e3";
+function showQ() {
+  nextbut.style.display = "none";
+  const q = questions[current];
+  qdisplay.innerHTML = `Question ${current + 1} of ${questions.length}`;
+  question.innerHTML = q.question;
 
-        button.onclick = function () {
+  const answers = [...q.incorrect_answers, q.correct_answer].sort(() => Math.random() - 0.5);
 
-            option.forEach(btn => {
-                btn.disabled = true;
-            });
-            if (button.innerHTML === currentQuiz.correctanswer) {
-                button.style.backgroundColor = "green";
-                score++;
-
-            } else {
-
-                button.style.backgroundColor = "red";
-                option.forEach(btn => {
-
-                    if (btn.innerHTML === currentQuiz.correctanswer) {
-                        btn.style.backgroundColor = "green";
-                    }
-
-                });
-            }
-            nextButton.style.display = "block";
-        };
-
-    });
-
+  options.forEach((btn, i) => {
+    btn.innerHTML = answers[i];
+    btn.disabled = false;
+    btn.style.backgroundColor = "#8bb6e3";
+    btn.onclick = () => {
+      options.forEach(b => {
+        b.disabled = true;
+        if (b.innerHTML === q.correct_answer) b.style.backgroundColor = "green";
+      });
+      if (btn.innerHTML !== q.correct_answer) { btn.style.backgroundColor = "red"; } else score++;
+      nextbut.style.display = "block";
+    };
+  });
 }
-nextButton.addEventListener("click", () => {
 
-    currentquestion++;
-    if (currentquestion < questions.length) {
+nextbut.addEventListener("click", () => 
+  ++current < questions.length ? showQ() : showScore()
+);
 
-        showq();
-
-    } else {
-        showscore();
-    }
-
-});
-
-function showscore() {
-    nextButton.style.display = "none";
-    question.innerHTML =
-        `Quiz Finished! <br><br> Your Score: ${score} / ${questions.length}`;
-    document.getElementById("adisplay").style.display = "none";
-    qdisplay.innerHTML = "Completed!";
+function showScore() {
+  nextbut.style.display = "none";
+   adisplay.style.display = "none";
+  question.style.display = "none";
+   qdisplay.innerHTML = `Quiz Finished!<br><br>Your Score: ${score} / ${questions.length}`;
 }
 fetchQuestions();
