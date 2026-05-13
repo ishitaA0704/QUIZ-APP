@@ -4,6 +4,24 @@ body{
     margin: 0;
     padding: 20px;
 }
+#start{
+    display: block;
+    width: 250px;
+    margin: 40px auto;
+    padding: 18px;
+    background-color: #2a6496;
+    color: white;
+    border: 5px solid #1a4a7a;
+    border-radius: 20px;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#start:hover{
+    background-color: #3a85c8;
+}
 #qdisplay{
     max-width: 600px;
     margin: 0 auto;
@@ -41,7 +59,6 @@ body h1 {
     font-weight: bold;
     color: #e0f0ff;
     margin-bottom: 20px;
-    letter-spacing: 1px;
 }
 .op {
     display: block;
