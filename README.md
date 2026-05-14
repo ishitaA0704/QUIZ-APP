@@ -1,56 +1,43 @@
-🧠 Online Quiz App
+# Quiz App 🎯
 
-An interactive Quiz Application built using HTML, CSS, and JavaScript.
+An interactive Quiz App built using HTML, CSS, and JavaScript that fetches real-time quiz questions using the Open Trivia Database API.
 
-This project allows users to answer multiple-choice questions, receive instant feedback, and view their final score at the end of the quiz.
+## Website Link 🌐
+[Open Quiz App](https://quiz-app-v7p0.onrender.com)
 
-✨ Features
-✅ 10 Multiple Choice Questions
-✅ 4 Answer Options for Each Question
-✅ Instant Answer Feedback
-Green → Correct Answer
-Red → Wrong Answer
-✅ Answers Cannot Be Changed After Selection
-✅ Next Question Navigation
-✅ Final Score Display
-✅ Countdown Timer Added
-✅ Responsive and Interactive UI
-⏳ Timer Feature
+## Features ✨
+- Multiple quiz categories
+- Dynamic questions using API
+- Countdown timer for each question
+- Instant answer validation
+- Score tracking system
+- Performance message at the end
+- Restart quiz functionality
+- Responsive and interactive UI
 
-A countdown timer is included for each question to make the quiz more interactive and challenging.
+## Technologies Used 💻
+- HTML
+- CSS
+- JavaScript
+- Open Trivia DB API
 
-If the timer runs out:
-The question is automatically skipped or locked
-User moves to the next question
+## How It Works ⚡
+1. Select a quiz category
+2. Click on **Start Quiz**
+3. Answer questions before the timer ends
+4. View your final score and performance message
+5. Restart and play again
 
-This feature improves:
+## API Used 🌐
+Open Trivia Database API:  
+[Open Trivia DB](https://opentdb.com/?utm_source=chatgpt.com)
 
-User engagement
-Time management
-Real quiz experience
-🛠️ Technologies Used
-HTML5
-CSS3
-JavaScript (ES6)
-🎯 Learning Outcomes
-
-Through this project, I practiced:
-
-DOM Manipulation
-Event Handling
-Arrays & Objects
-Conditional Logic
-Functions
-Timers using setInterval()
-Dynamic UI Updates
-Score Tracking
-🚀 Future Improvements
-Add difficulty levels
-Store high scores using Local Storage
-Add category-based quizzes
-Add sound effects and animations
-Randomize questions
-Add progress bar
-📌 Purpose
-
-This project was built as part of my JavaScript learning journey to strengthen my frontend development and logic-building skills through hands-on practice.
+## What I Learned 📚
+While building this project, I practiced:
+- DOM Manipulation
+- Fetch API
+- Async/Await
+- Event Handling
+- Timers using `setInterval()`
+- Dynamic UI updates
+- JavaScript logic building
